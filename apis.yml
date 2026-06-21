@@ -1,0 +1,140 @@
+aid: notch-financial
+url: https://raw.githubusercontent.com/api-evangelist/notch-financial/refs/heads/main/apis.yml
+name: Notch
+kind: company
+description: Notch is an accounts-receivable and accounts-payable automation platform
+  purpose-built for the food and beverage and wholesale distribution industry. It
+  automates invoicing, payment collection, payment processing, and reconciliation,
+  with branded customer payment portals, autopay, and dual-sync accounting / ERP
+  integrations (QuickBooks, NetSuite, Xero, Microsoft Dynamics 365). Notch describes
+  having an API available for integration, but does not publish a public developer
+  reference; the API surfaces modeled here are derived from documented product
+  capabilities and are not reconciled against an official specification.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Accounts Receivable
+- Accounts Payable
+- B2B Payments
+- Invoicing
+- FinTech
+created: '2026-06-21'
+modified: '2026-06-21'
+specificationVersion: '0.19'
+apis:
+- aid: notch-financial:invoices
+  name: Notch Invoices API
+  tags:
+  - Invoices
+  - Bills
+  - Accounts Receivable
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.notch.financial/products/bills-invoice-management
+  properties:
+  - url: https://www.notch.financial/products/bills-invoice-management
+    type: Documentation
+  - url: openapi/notch-financial-openapi.yml
+    type: OpenAPI
+  description: Capability area covering creation, retrieval, and management of invoices
+    and outstanding bills that customers can view and pay. Notch syncs invoice and
+    collections data to connected accounting / ERP systems. No public endpoint
+    reference is documented by Notch; modeled here as an unreconciled capability.
+- aid: notch-financial:payments
+  name: Notch Payments API
+  tags:
+  - Payments
+  - Collection
+  - Reconciliation
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.notch.financial/products/payment-processing-software
+  properties:
+  - url: https://www.notch.financial/products/payment-processing-software
+    type: Documentation
+  - url: openapi/notch-financial-openapi.yml
+    type: OpenAPI
+  description: Capability area covering payment collection, processing, autopay /
+    scheduled pull payments, and reconciliation against invoices. Supports card and
+    EFT/ACH payment rails per the product. No public endpoint reference is documented
+    by Notch; modeled here as an unreconciled capability.
+- aid: notch-financial:customers
+  name: Notch Customers API
+  tags:
+  - Customers
+  - CRM
+  - Accounts
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.notch.financial/products/customer-payment-portal
+  properties:
+  - url: https://www.notch.financial/products/customer-payment-portal
+    type: Documentation
+  - url: openapi/notch-financial-openapi.yml
+    type: OpenAPI
+  description: Capability area covering customer records that own invoices, payment
+    methods, and portal access for branded self-serve payment. No public endpoint
+    reference is documented by Notch; modeled here as an unreconciled capability.
+- aid: notch-financial:payment-methods
+  name: Notch Payment Methods API
+  tags:
+  - Payment Methods
+  - Cards
+  - Autopay
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.notch.financial/products/customer-payment-portal
+  properties:
+  - url: https://www.notch.financial/products/customer-payment-portal
+    type: Documentation
+  - url: openapi/notch-financial-openapi.yml
+    type: OpenAPI
+  description: Capability area covering stored customer payment methods - credit
+    cards (Visa, Mastercard, Amex) and EFT/ACH - held in PCI-compliant infrastructure
+    and used for autopay. No public endpoint reference is documented by Notch;
+    modeled here as an unreconciled capability.
+- aid: notch-financial:bank-accounts
+  name: Notch Bank Accounts API
+  tags:
+  - Bank Accounts
+  - EFT
+  - ACH
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.notch.financial/products/payment-collection-software
+  properties:
+  - url: https://www.notch.financial/products/payment-collection-software
+    type: Documentation
+  - url: openapi/notch-financial-openapi.yml
+    type: OpenAPI
+  description: Capability area covering bank accounts used for EFT/ACH electronic
+    fund transfers in payment collection and disbursement. No public endpoint
+    reference is documented by Notch; modeled here as an unreconciled capability.
+- aid: notch-financial:webhooks
+  name: Notch Webhooks API
+  tags:
+  - Webhooks
+  - Events
+  - Sync
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.notch.financial/integrations
+  properties:
+  - url: https://www.notch.financial/integrations
+    type: Documentation
+  - url: openapi/notch-financial-openapi.yml
+    type: OpenAPI
+  description: Capability area covering event notifications and one-way / two-way
+    data sync that keep connected accounting and ERP systems updated with paid
+    bills, outstanding invoices, and collections data in real time. No public
+    webhook reference is documented by Notch; modeled here as an unreconciled
+    capability.
+common:
+- type: LinkedIn
+  url: https://ca.linkedin.com/company/notchfinancial
+- type: Website
+  url: https://www.notch.financial
+- type: Documentation
+  url: https://www.notch.financial/integrations
+- type: Plans
+  url: plans/notch-financial-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/notch-financial-rate-limits.yml
+- type: FinOps
+  url: finops/notch-financial-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

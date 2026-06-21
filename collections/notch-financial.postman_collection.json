@@ -1,0 +1,349 @@
+{
+  "item": [
+    {
+      "name": "Invoices",
+      "description": {
+        "content": "Invoices / outstanding bills. Unreconciled capability model; Notch does not publish a public API reference.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "name": "List invoices",
+          "request": {
+            "name": "List invoices",
+            "url": {
+              "path": ["invoices"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "name": "Create invoice",
+          "request": {
+            "name": "Create invoice",
+            "url": {
+              "path": ["invoices"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_id\": \"<string>\",\n  \"number\": \"<string>\",\n  \"currency\": \"USD\",\n  \"amount_due\": 0,\n  \"due_date\": \"2026-06-21\"\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get invoice",
+          "request": {
+            "name": "Get invoice",
+            "url": {
+              "path": ["invoices", ":invoiceId"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": [{ "key": "invoiceId", "value": "" }]
+            },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "description": {
+        "content": "Payment collection, processing, autopay, reconciliation. Unreconciled capability model.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "name": "List payments",
+          "request": {
+            "name": "List payments",
+            "url": {
+              "path": ["payments"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "name": "Create payment",
+          "request": {
+            "name": "Create payment",
+            "url": {
+              "path": ["payments"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_id\": \"<string>\",\n  \"invoice_id\": \"<string>\",\n  \"amount\": 0,\n  \"currency\": \"USD\",\n  \"method\": \"ach\"\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get payment",
+          "request": {
+            "name": "Get payment",
+            "url": {
+              "path": ["payments", ":paymentId"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": [{ "key": "paymentId", "value": "" }]
+            },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "description": {
+        "content": "Customer / payer accounts. Unreconciled capability model.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "name": "List customers",
+          "request": {
+            "name": "List customers",
+            "url": {
+              "path": ["customers"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "name": "Create customer",
+          "request": {
+            "name": "Create customer",
+            "url": {
+              "path": ["customers"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"autopay_enabled\": false\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get customer",
+          "request": {
+            "name": "Get customer",
+            "url": {
+              "path": ["customers", ":customerId"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": [{ "key": "customerId", "value": "" }]
+            },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Payment Methods",
+      "description": {
+        "content": "Stored card and EFT/ACH payment methods. Unreconciled capability model.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "name": "List payment methods",
+          "request": {
+            "name": "List payment methods",
+            "url": {
+              "path": ["payment-methods"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "name": "Create payment method",
+          "request": {
+            "name": "Create payment method",
+            "url": {
+              "path": ["payment-methods"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_id\": \"<string>\",\n  \"type\": \"card\",\n  \"brand\": \"visa\",\n  \"last4\": \"<string>\",\n  \"is_default\": true\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bank Accounts",
+      "description": {
+        "content": "Bank accounts for EFT/ACH transfers. Unreconciled capability model.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "name": "List bank accounts",
+          "request": {
+            "name": "List bank accounts",
+            "url": {
+              "path": ["bank-accounts"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "name": "Create bank account",
+          "request": {
+            "name": "Create bank account",
+            "url": {
+              "path": ["bank-accounts"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_id\": \"<string>\",\n  \"account_holder_name\": \"<string>\",\n  \"bank_name\": \"<string>\",\n  \"last4\": \"<string>\",\n  \"type\": \"checking\"\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Webhooks",
+      "description": {
+        "content": "Event notifications and accounting / ERP data sync. Unreconciled capability model.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "name": "List webhooks",
+          "request": {
+            "name": "List webhooks",
+            "url": {
+              "path": ["webhooks"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Accept", "value": "application/json" }],
+            "method": "GET",
+            "auth": null
+          },
+          "response": []
+        },
+        {
+          "name": "Create webhook",
+          "request": {
+            "name": "Create webhook",
+            "url": {
+              "path": ["webhooks"],
+              "host": ["{{baseUrl}}"],
+              "query": [],
+              "variable": []
+            },
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"https://example.com/webhooks/notch\",\n  \"events\": [\"payment.succeeded\"],\n  \"active\": true\n}",
+              "options": { "raw": { "language": "json" } }
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.notch.financial",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [{ "key": "token", "value": "{{bearerToken}}" }]
+  },
+  "info": {
+    "_postman_id": "0a1b2c3d-4e5f-6071-8293-a4b5c6d7e8f9",
+    "name": "Notch API (unreconciled capability model)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Unreconciled capability model of the Notch (notch.financial) accounts-receivable / accounts-payable automation and B2B payments platform. Notch does not publish a public API reference, base URL, or auth guide; paths, the base URL, and the Bearer scheme here are illustrative placeholders derived from documented product capabilities, not an official Notch specification. Not Notch Pay (notchpay.co).",
+      "type": "text/plain"
+    }
+  }
+}

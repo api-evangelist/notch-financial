@@ -1,0 +1,59 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Notch
+providerId: notch-financial
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Accounts Receivable
+- Accounts Payable
+- B2B Payments
+- Invoicing
+- FinTech
+- Plans
+description: >-
+  Notch uses a sales-led, quote-based commercial model. Pricing for its
+  accounts-receivable / accounts-payable automation platform and payment
+  processing is not published as public self-serve tiers; prospects book a
+  demo and receive custom pricing based on volume, products used, and payment
+  processing rates. No public, machine-readable API plan or per-call pricing
+  is documented. Values here are not reconciled.
+notes: >-
+  Notch markets competitive payment processing rates and per-product
+  packaging but does not publish rate cards. Contact Notch sales for current
+  pricing. Reconcile if Notch publishes public pricing.
+sources:
+- https://www.notch.financial
+- https://www.notch.financial/products/payment-processing-software
+plans:
+- id: notch-financial-quote
+  name: Custom (Sales-Led)
+  type: enterprise
+  description: >-
+    Quote-based pricing for AR/AP automation, customer payment portals,
+    payment collection / processing / reconciliation, and accounting / ERP
+    integrations. Includes negotiated payment processing rates. Contact Notch
+    sales for a demo and quote.
+  entries:
+  - label: Platform & Payment Processing
+    name: custom_quote
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: north-america
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Accounts Receivable Automation
+  - name: Accounts Payable Automation
+  - name: Customer Payment Portal
+  - name: Payment Collection & Processing
+  - name: Payment Reconciliation
+  - name: Accounting / ERP Integrations
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

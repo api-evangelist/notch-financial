@@ -1,0 +1,163 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Notch API (unreconciled capability model)",
+    "version": "0.0.0-unreconciled"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": { "name": "Invoices", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List invoices", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.notch.financial/invoices" },
+          "docs": "List invoices / outstanding bills. Unreconciled capability model."
+        },
+        {
+          "info": { "name": "Create invoice", "type": "http" },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/invoices",
+            "body": { "type": "json", "data": "{}" }
+          },
+          "docs": "Create an invoice. Unreconciled capability model."
+        },
+        {
+          "info": { "name": "Get invoice", "type": "http" },
+          "http": {
+            "method": "GET",
+            "url": "https://api.notch.financial/invoices/:invoiceId",
+            "params": [
+              { "name": "invoiceId", "value": "", "type": "path", "description": "The ID of the invoice to retrieve." }
+            ]
+          },
+          "docs": "Retrieve an invoice. Unreconciled capability model."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Payments", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List payments", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.notch.financial/payments" },
+          "docs": "List payments. Unreconciled capability model."
+        },
+        {
+          "info": { "name": "Create payment", "type": "http" },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/payments",
+            "body": { "type": "json", "data": "{}" }
+          },
+          "docs": "Collect or record a payment. Unreconciled capability model."
+        },
+        {
+          "info": { "name": "Get payment", "type": "http" },
+          "http": {
+            "method": "GET",
+            "url": "https://api.notch.financial/payments/:paymentId",
+            "params": [
+              { "name": "paymentId", "value": "", "type": "path", "description": "The ID of the payment to retrieve." }
+            ]
+          },
+          "docs": "Retrieve a payment. Unreconciled capability model."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Customers", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List customers", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.notch.financial/customers" },
+          "docs": "List customers. Unreconciled capability model."
+        },
+        {
+          "info": { "name": "Create customer", "type": "http" },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/customers",
+            "body": { "type": "json", "data": "{}" }
+          },
+          "docs": "Create a customer. Unreconciled capability model."
+        },
+        {
+          "info": { "name": "Get customer", "type": "http" },
+          "http": {
+            "method": "GET",
+            "url": "https://api.notch.financial/customers/:customerId",
+            "params": [
+              { "name": "customerId", "value": "", "type": "path", "description": "The ID of the customer to retrieve." }
+            ]
+          },
+          "docs": "Retrieve a customer. Unreconciled capability model."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Payment Methods", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List payment methods", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.notch.financial/payment-methods" },
+          "docs": "List stored payment methods (cards, EFT/ACH). Unreconciled capability model."
+        },
+        {
+          "info": { "name": "Create payment method", "type": "http" },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/payment-methods",
+            "body": { "type": "json", "data": "{}" }
+          },
+          "docs": "Store a payment method. Unreconciled capability model."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Bank Accounts", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List bank accounts", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.notch.financial/bank-accounts" },
+          "docs": "List bank accounts for EFT/ACH. Unreconciled capability model."
+        },
+        {
+          "info": { "name": "Create bank account", "type": "http" },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/bank-accounts",
+            "body": { "type": "json", "data": "{}" }
+          },
+          "docs": "Add a bank account for EFT/ACH. Unreconciled capability model."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Webhooks", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List webhooks", "type": "http" },
+          "http": { "method": "GET", "url": "https://api.notch.financial/webhooks" },
+          "docs": "List webhook subscriptions. Unreconciled capability model."
+        },
+        {
+          "info": { "name": "Create webhook", "type": "http" },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/webhooks",
+            "body": { "type": "json", "data": "{}" }
+          },
+          "docs": "Create a webhook subscription. Unreconciled capability model."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

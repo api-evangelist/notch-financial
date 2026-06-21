@@ -1,0 +1,42 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Notch
+providerId: notch-financial
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Accounts Receivable
+- Accounts Payable
+- B2B Payments
+- Invoicing
+- FinTech
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Notch does not publish a public developer reference, so no API rate limits,
+  quotas, throttling policies, or throttling response codes are documented.
+  Any limits would be defined within Notch's integration agreements and are
+  not publicly reconciled in this artifact.
+notes: >-
+  Reconcile against Notch's developer documentation if and when it becomes
+  publicly available, or against a signed integration agreement.
+sources:
+- https://www.notch.financial
+- https://www.notch.financial/integrations
+responseCodes:
+  throttled: not documented
+limits:
+- name: API Rate Limit
+  scope: account
+  metric: requests
+  limit: not documented
+  notes: Notch does not publish public API rate limits.
+policies:
+- name: Undocumented
+  description: No public rate-limiting or backoff policy is documented by Notch.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

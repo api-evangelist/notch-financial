@@ -1,0 +1,92 @@
+aid: notch-financial
+name: Notch
+review:
+  question: Does Notch (notch.financial) publish a documented public REST API?
+  answer: false
+  date: '2026-06-21'
+  reviewer: API Evangelist
+disambiguation:
+  summary: |
+    "Notch" is an ambiguous name across several unrelated companies. This
+    profile covers ONLY Notch at notch.financial. Do not conflate it with
+    the other entities below.
+  thisProfile:
+    name: Notch
+    url: https://www.notch.financial
+    what: Accounts-receivable / accounts-payable automation and B2B payments for the food and beverage and wholesale distribution industry.
+    linkedin: https://ca.linkedin.com/company/notchfinancial
+  notThisProfile:
+    - name: Notch Pay
+      url: https://notchpay.co
+      developer: https://developer.notchpay.co
+      what: African (Cameroon-based) online payment gateway with a documented public REST API at https://api.notchpay.co using API-key auth. A DIFFERENT company. Most "Notch API" search results refer to this, not notch.financial.
+    - name: Notch
+      url: https://www.notch.cx
+      what: Autonomous AI agents for regulated industries. Different company.
+    - name: Notch Interfaces
+      url: https://github.com/wearenotch
+      what: Creative / interactive technology studio (wearenotch / wearnotch on GitHub). Different company; not the GitHub org for notch.financial.
+    - name: Notch (restaurant ordering)
+      what: Restaurant / hospitality ordering platform sometimes branded "Notch." Different product.
+findings:
+  summary: |
+    Notch (notch.financial) is an AR/AP automation platform purpose-built for
+    the food and beverage and wholesale distribution industry. It automates
+    invoicing, payment collection, payment processing, and reconciliation,
+    offers branded customer payment portals with autopay, and provides
+    dual-sync accounting / ERP integrations (QuickBooks Online, QuickBooks
+    Desktop, NetSuite, Xero, Microsoft Dynamics 365). Notch's own marketing
+    states "Notch has an API available," and it consumes a unified API
+    (Rutter) to power its accounting integrations. However, as of the review
+    date Notch does NOT publish a public developer reference, OpenAPI
+    document, API base URL, or authentication guide. No docs.notch.financial
+    developer portal was reachable. The API surfaces in this repo (Invoices,
+    Payments, Customers, Payment Methods, Bank Accounts, Webhooks) are an
+    UNRECONCILED capability model derived from documented product features,
+    not from an official Notch specification, and must not be treated as a
+    production contract.
+  apiDocumented: false
+  publicBaseURL: not documented
+  authDocumented: false
+  capabilitiesConfirmed:
+    - Invoices and outstanding bills that customers view and pay
+    - Payment collection, processing, autopay (scheduled pull), and reconciliation
+    - Customer records and branded self-serve payment portals
+    - Stored payment methods - cards (Visa, Mastercard, Amex) and EFT/ACH - in PCI-compliant infrastructure
+    - Bank accounts for EFT/ACH electronic fund transfers
+    - One-way / two-way data sync to accounting and ERP systems (real-time)
+  githubOrganization:
+    confirmed: false
+    note: No GitHub organization could be confirmed for notch.financial. The wearenotch / wearnotch orgs belong to Notch Interfaces (a different company) and notchpay belongs to Notch Pay. No GitHubOrganization common entry was added to apis.yml.
+sources:
+- url: https://www.notch.financial
+  type: Website
+  note: Company overview; AR/AP automation for food & beverage / wholesale distribution. No developer/API links.
+- url: https://www.notch.financial/integrations
+  type: Documentation
+  note: Lists QuickBooks, NetSuite, Xero, Dynamics 365 integrations and one-way/two-way sync; no public API reference, keys, or webhook docs.
+- url: https://www.notch.financial/products/customer-payment-portal
+  type: Documentation
+  note: Confirms invoices, card (Visa/MC/Amex) and EFT/ACH payment methods, autopay, PCI-compliant storage.
+- url: https://www.notch.financial/products/payment-processing-software
+  type: Documentation
+  note: Payment processing capabilities and competitive processing rates.
+- url: https://www.rutter.com/case-studies/notch-financial
+  type: CaseStudy
+  note: Notch consumes Rutter's unified API to power accounting integrations (Notch is an API consumer here, not a public API provider).
+- url: https://developer.notchpay.co/api-reference
+  type: APIReference
+  note: Belongs to Notch Pay (notchpay.co), a DIFFERENT company. Captured only for disambiguation; not used as notch.financial's API.
+actions:
+  apisYmlReconciled: false
+  openapiReconciled: false
+  reason: |
+    Notch publishes no public API specification. Per API Evangelist no-fabrication
+    rules, the apis.yml subs and the OpenAPI document are modeled from documented
+    product capabilities and explicitly marked unreconciled. reconciled is false
+    across plans, rate-limits, and finops. No GitHubOrganization was added because
+    none could be confirmed. The notchpay.co API was deliberately excluded to avoid
+    misattribution.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

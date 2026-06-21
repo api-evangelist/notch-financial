@@ -1,0 +1,82 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Notch
+providerId: notch-financial
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Accounts Receivable
+- Accounts Payable
+- B2B Payments
+- Invoicing
+- FinTech
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Notch spend. Notch is a sales-led AR/AP automation and B2B
+  payments platform; it does not publish public per-call API pricing or
+  self-serve plans. Spend is governed by a negotiated subscription plus
+  payment-processing rates rather than metered API usage. With no public
+  rate card or usage meters, cost attribution below is unreconciled and
+  framed against documented product capabilities.
+notes: >-
+  Reconcile billing model, currency, and meters against a signed Notch
+  agreement and invoice. Payment processing fees are negotiated and not
+  publicly listed.
+sources:
+- https://www.notch.financial
+- https://www.notch.financial/products/payment-processing-software
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Notch
+serviceCategory: Financial Operations and Payments
+billingModel:
+  pricingCategory: Subscription and Transaction Fees
+  billingFrequency: not documented
+  billingCurrency: not documented
+  chargeCategories:
+  - Usage
+  - Purchase
+focusColumns:
+  ServiceName: Notch AR/AP Automation
+  ServiceCategory: Financial Operations and Payments
+  ProviderName: Notch
+  PublisherName: Notch
+  InvoiceIssuerName: Notch
+  BillingCurrency: not documented
+  ChargeCategory: Purchase
+  PricingCategory: Subscription and Transaction Fees
+meters:
+- name: platform_subscription
+  description: Negotiated subscription for the AR/AP automation platform (not publicly priced).
+  unit: contract
+  aggregation: sum
+  dimensions:
+  - account
+- name: payment_processing
+  description: Payment processing fees on collected card and EFT/ACH payments (negotiated, not publicly priced).
+  unit: transactions
+  aggregation: sum
+  dimensions:
+  - account
+  - method
+principles:
+- name: Visibility
+  description: Obtain Notch invoices and processing statements; track subscription plus per-transaction processing fees.
+- name: Allocation
+  description: Map Notch spend to the AR/AP function and to payer/customer cohorts where processing fees apply.
+- name: Optimization
+  description: Negotiate processing rates by volume; drive customers to lower-cost EFT/ACH and autopay to reduce manual collection cost.
+- name: Accountability
+  description: Assign finance ownership; review subscription and processing fees against collections lift monthly.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
