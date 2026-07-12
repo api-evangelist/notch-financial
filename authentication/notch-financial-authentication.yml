@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/notch-financial-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: Illustrative Bearer API key scheme. Notch's actual authentication mechanism is
+    not publicly documented and is unverified.
+  sources:
+  - openapi/notch-financial-openapi.yml

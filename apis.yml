@@ -123,6 +123,12 @@ apis:
     webhook reference is documented by Notch; modeled here as an unreconciled
     capability.
 common:
+- type: DomainSecurity
+  url: security/notch-financial-domain-security.yml
+- type: Authentication
+  url: authentication/notch-financial-authentication.yml
+- url: https://www.notch.financial/blog
+  type: Blog
 - type: LinkedIn
   url: https://ca.linkedin.com/company/notchfinancial
 - type: Website
