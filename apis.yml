@@ -123,6 +123,8 @@ apis:
     webhook reference is documented by Notch; modeled here as an unreconciled
     capability.
 common:
+- type: AgenticAccess
+  url: agentic-access/notch-financial-agentic-access.yml
 - type: DomainSecurity
   url: security/notch-financial-domain-security.yml
 - type: Authentication
