@@ -1,0 +1,114 @@
+openapi: 3.0.1
+info:
+  title: Notch API (unreconciled capability model) Bank Accounts Invoices API
+  description: 'Capability model of the Notch (notch.financial) accounts-receivable / accounts-payable automation platform for the food and beverage and wholesale distribution industry.
+
+    IMPORTANT: Notch states an API is available for integration, but as of 2026-06-21 it does NOT publish a public developer reference, OpenAPI document, base URL, or authentication guide. This specification is an UNRECONCILED model derived from documented product capabilities (invoices/bills, payment collection and processing, customer payment portals, stored card and EFT/ACH payment methods, bank accounts, and accounting/ERP data sync). Paths, schemas, server URL, and the Bearer authentication scheme below are illustrative placeholders and are NOT confirmed against an official Notch specification. Do not treat them as production contracts. Reconcile against Notch''s developer documentation when it becomes publicly available.
+
+    Disambiguation: not Notch Pay (notchpay.co), not notch.cx, and not the Notch restaurant ordering platform.'
+  contact:
+    name: Notch
+    url: https://www.notch.financial
+  version: 0.0.0-unreconciled
+servers:
+- url: https://api.notch.financial
+  description: Placeholder base URL. Notch does not document a public API base URL; this value is illustrative and unverified.
+security:
+- bearerAuth: []
+tags:
+- name: Invoices
+paths:
+  /invoices:
+    get:
+      operationId: listInvoices
+      tags:
+      - Invoices
+      summary: List invoices (unreconciled).
+      description: Illustrative; not a documented Notch endpoint.
+      responses:
+        '200':
+          description: A list of invoices.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Invoice'
+    post:
+      operationId: createInvoice
+      tags:
+      - Invoices
+      summary: Create an invoice (unreconciled).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+      responses:
+        '201':
+          description: Invoice created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+  /invoices/{invoiceId}:
+    get:
+      operationId: getInvoice
+      tags:
+      - Invoices
+      summary: Retrieve an invoice (unreconciled).
+      parameters:
+      - $ref: '#/components/parameters/invoiceId'
+      responses:
+        '200':
+          description: An invoice.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+components:
+  parameters:
+    invoiceId:
+      name: invoiceId
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    Invoice:
+      type: object
+      description: An invoice / outstanding bill owed by a customer (illustrative).
+      properties:
+        id:
+          type: string
+        customer_id:
+          type: string
+        number:
+          type: string
+        status:
+          type: string
+          enum:
+          - draft
+          - open
+          - paid
+          - overdue
+          - void
+        currency:
+          type: string
+          example: USD
+        amount_due:
+          type: number
+        amount_paid:
+          type: number
+        due_date:
+          type: string
+          format: date
+        created_at:
+          type: string
+          format: date-time
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Illustrative Bearer API key scheme. Notch's actual authentication mechanism is not publicly documented and is unverified.

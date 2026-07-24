@@ -1,0 +1,79 @@
+openapi: 3.0.1
+info:
+  title: Notch API (unreconciled capability model) Bank Accounts API
+  description: 'Capability model of the Notch (notch.financial) accounts-receivable / accounts-payable automation platform for the food and beverage and wholesale distribution industry.
+
+    IMPORTANT: Notch states an API is available for integration, but as of 2026-06-21 it does NOT publish a public developer reference, OpenAPI document, base URL, or authentication guide. This specification is an UNRECONCILED model derived from documented product capabilities (invoices/bills, payment collection and processing, customer payment portals, stored card and EFT/ACH payment methods, bank accounts, and accounting/ERP data sync). Paths, schemas, server URL, and the Bearer authentication scheme below are illustrative placeholders and are NOT confirmed against an official Notch specification. Do not treat them as production contracts. Reconcile against Notch''s developer documentation when it becomes publicly available.
+
+    Disambiguation: not Notch Pay (notchpay.co), not notch.cx, and not the Notch restaurant ordering platform.'
+  contact:
+    name: Notch
+    url: https://www.notch.financial
+  version: 0.0.0-unreconciled
+servers:
+- url: https://api.notch.financial
+  description: Placeholder base URL. Notch does not document a public API base URL; this value is illustrative and unverified.
+security:
+- bearerAuth: []
+tags:
+- name: Bank Accounts
+paths:
+  /bank-accounts:
+    get:
+      operationId: listBankAccounts
+      tags:
+      - Bank Accounts
+      summary: List bank accounts (unreconciled).
+      responses:
+        '200':
+          description: A list of bank accounts.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BankAccount'
+    post:
+      operationId: createBankAccount
+      tags:
+      - Bank Accounts
+      summary: Add a bank account for EFT/ACH (unreconciled).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankAccount'
+      responses:
+        '201':
+          description: Bank account added.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BankAccount'
+components:
+  schemas:
+    BankAccount:
+      type: object
+      description: A bank account used for EFT/ACH transfers (illustrative).
+      properties:
+        id:
+          type: string
+        customer_id:
+          type: string
+        account_holder_name:
+          type: string
+        bank_name:
+          type: string
+        last4:
+          type: string
+        type:
+          type: string
+          enum:
+          - checking
+          - savings
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Illustrative Bearer API key scheme. Notch's actual authentication mechanism is not publicly documented and is unverified.
