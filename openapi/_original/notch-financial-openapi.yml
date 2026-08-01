@@ -1,0 +1,452 @@
+openapi: 3.0.1
+info:
+  title: Notch API (unreconciled capability model)
+  description: >-
+    Capability model of the Notch (notch.financial) accounts-receivable /
+    accounts-payable automation platform for the food and beverage and
+    wholesale distribution industry.
+
+    IMPORTANT: Notch states an API is available for integration, but as of
+    2026-06-21 it does NOT publish a public developer reference, OpenAPI
+    document, base URL, or authentication guide. This specification is an
+    UNRECONCILED model derived from documented product capabilities
+    (invoices/bills, payment collection and processing, customer payment
+    portals, stored card and EFT/ACH payment methods, bank accounts, and
+    accounting/ERP data sync). Paths, schemas, server URL, and the Bearer
+    authentication scheme below are illustrative placeholders and are NOT
+    confirmed against an official Notch specification. Do not treat them as
+    production contracts. Reconcile against Notch's developer documentation
+    when it becomes publicly available.
+
+    Disambiguation: not Notch Pay (notchpay.co), not notch.cx, and not the
+    Notch restaurant ordering platform.
+  contact:
+    name: Notch
+    url: https://www.notch.financial
+  version: 0.0.0-unreconciled
+servers:
+  - url: https://api.notch.financial
+    description: >-
+      Placeholder base URL. Notch does not document a public API base URL;
+      this value is illustrative and unverified.
+security:
+  - bearerAuth: []
+tags:
+  - name: Invoices
+  - name: Payments
+  - name: Customers
+  - name: Payment Methods
+  - name: Bank Accounts
+  - name: Webhooks
+paths:
+  /invoices:
+    get:
+      operationId: listInvoices
+      tags:
+        - Invoices
+      summary: List invoices (unreconciled).
+      description: Illustrative; not a documented Notch endpoint.
+      responses:
+        '200':
+          description: A list of invoices.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Invoice'
+    post:
+      operationId: createInvoice
+      tags:
+        - Invoices
+      summary: Create an invoice (unreconciled).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+      responses:
+        '201':
+          description: Invoice created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+  /invoices/{invoiceId}:
+    get:
+      operationId: getInvoice
+      tags:
+        - Invoices
+      summary: Retrieve an invoice (unreconciled).
+      parameters:
+        - $ref: '#/components/parameters/invoiceId'
+      responses:
+        '200':
+          description: An invoice.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+  /payments:
+    get:
+      operationId: listPayments
+      tags:
+        - Payments
+      summary: List payments (unreconciled).
+      responses:
+        '200':
+          description: A list of payments.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Payment'
+    post:
+      operationId: createPayment
+      tags:
+        - Payments
+      summary: Collect or record a payment (unreconciled).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
+      responses:
+        '201':
+          description: Payment created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Payment'
+  /payments/{paymentId}:
+    get:
+      operationId: getPayment
+      tags:
+        - Payments
+      summary: Retrieve a payment (unreconciled).
+      parameters:
+        - $ref: '#/components/parameters/paymentId'
+      responses:
+        '200':
+          description: A payment.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Payment'
+  /customers:
+    get:
+      operationId: listCustomers
+      tags:
+        - Customers
+      summary: List customers (unreconciled).
+      responses:
+        '200':
+          description: A list of customers.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+    post:
+      operationId: createCustomer
+      tags:
+        - Customers
+      summary: Create a customer (unreconciled).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '201':
+          description: Customer created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+  /customers/{customerId}:
+    get:
+      operationId: getCustomer
+      tags:
+        - Customers
+      summary: Retrieve a customer (unreconciled).
+      parameters:
+        - $ref: '#/components/parameters/customerId'
+      responses:
+        '200':
+          description: A customer.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+  /payment-methods:
+    get:
+      operationId: listPaymentMethods
+      tags:
+        - Payment Methods
+      summary: List stored payment methods (unreconciled).
+      responses:
+        '200':
+          description: A list of payment methods.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaymentMethod'
+    post:
+      operationId: createPaymentMethod
+      tags:
+        - Payment Methods
+      summary: Store a payment method (unreconciled).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentMethod'
+      responses:
+        '201':
+          description: Payment method stored.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentMethod'
+  /bank-accounts:
+    get:
+      operationId: listBankAccounts
+      tags:
+        - Bank Accounts
+      summary: List bank accounts (unreconciled).
+      responses:
+        '200':
+          description: A list of bank accounts.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BankAccount'
+    post:
+      operationId: createBankAccount
+      tags:
+        - Bank Accounts
+      summary: Add a bank account for EFT/ACH (unreconciled).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankAccount'
+      responses:
+        '201':
+          description: Bank account added.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BankAccount'
+  /webhooks:
+    get:
+      operationId: listWebhooks
+      tags:
+        - Webhooks
+      summary: List webhook subscriptions (unreconciled).
+      responses:
+        '200':
+          description: A list of webhook subscriptions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Webhook'
+    post:
+      operationId: createWebhook
+      tags:
+        - Webhooks
+      summary: Create a webhook subscription (unreconciled).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Webhook'
+      responses:
+        '201':
+          description: Webhook subscription created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Webhook'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: >-
+        Illustrative Bearer API key scheme. Notch's actual authentication
+        mechanism is not publicly documented and is unverified.
+  parameters:
+    invoiceId:
+      name: invoiceId
+      in: path
+      required: true
+      schema:
+        type: string
+    paymentId:
+      name: paymentId
+      in: path
+      required: true
+      schema:
+        type: string
+    customerId:
+      name: customerId
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    Invoice:
+      type: object
+      description: An invoice / outstanding bill owed by a customer (illustrative).
+      properties:
+        id:
+          type: string
+        customer_id:
+          type: string
+        number:
+          type: string
+        status:
+          type: string
+          enum:
+            - draft
+            - open
+            - paid
+            - overdue
+            - void
+        currency:
+          type: string
+          example: USD
+        amount_due:
+          type: number
+        amount_paid:
+          type: number
+        due_date:
+          type: string
+          format: date
+        created_at:
+          type: string
+          format: date-time
+    Payment:
+      type: object
+      description: A payment collected against one or more invoices (illustrative).
+      properties:
+        id:
+          type: string
+        customer_id:
+          type: string
+        invoice_id:
+          type: string
+        amount:
+          type: number
+        currency:
+          type: string
+          example: USD
+        method:
+          type: string
+          enum:
+            - card
+            - eft
+            - ach
+        status:
+          type: string
+          enum:
+            - pending
+            - processing
+            - succeeded
+            - failed
+            - refunded
+        autopay:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+    Customer:
+      type: object
+      description: A customer / payer account (illustrative).
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        autopay_enabled:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+    PaymentMethod:
+      type: object
+      description: A stored payment method (illustrative).
+      properties:
+        id:
+          type: string
+        customer_id:
+          type: string
+        type:
+          type: string
+          enum:
+            - card
+            - bank_account
+        brand:
+          type: string
+          enum:
+            - visa
+            - mastercard
+            - amex
+        last4:
+          type: string
+        is_default:
+          type: boolean
+    BankAccount:
+      type: object
+      description: A bank account used for EFT/ACH transfers (illustrative).
+      properties:
+        id:
+          type: string
+        customer_id:
+          type: string
+        account_holder_name:
+          type: string
+        bank_name:
+          type: string
+        last4:
+          type: string
+        type:
+          type: string
+          enum:
+            - checking
+            - savings
+    Webhook:
+      type: object
+      description: A webhook subscription for event notifications (illustrative).
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+          format: uri
+        events:
+          type: array
+          items:
+            type: string
+            example: payment.succeeded
+        active:
+          type: boolean

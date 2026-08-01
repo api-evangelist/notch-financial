@@ -1,0 +1,24 @@
+{
+  "provider": "notch-financial",
+  "sources": [
+    "notch-financial-bank-accounts-api-openapi.yml",
+    "notch-financial-customers-api-openapi.yml",
+    "notch-financial-invoices-api-openapi.yml",
+    "notch-financial-payment-methods-api-openapi.yml",
+    "notch-financial-payments-api-openapi.yml",
+    "notch-financial-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "notch-financial-bank-accounts-api-openapi.yml",
+    "notch-financial-customers-api-openapi.yml",
+    "notch-financial-invoices-api-openapi.yml",
+    "notch-financial-payment-methods-api-openapi.yml",
+    "notch-financial-payments-api-openapi.yml",
+    "notch-financial-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
