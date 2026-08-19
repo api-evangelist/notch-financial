@@ -1,0 +1,212 @@
+{
+  "item": [
+    {
+      "id": "416176df-9488-4996-b964-1444080fe6a8",
+      "name": "Bank Accounts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "caa11625-9aa3-4d55-8739-23f33ccdc1ec",
+          "name": "List bank accounts (unreconciled).",
+          "request": {
+            "name": "List bank accounts (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "bank-accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9afc2801-a9a1-40c7-94ce-be135fc0ec81",
+              "name": "A list of bank accounts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bank-accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"customer_id\": \"string\",\n    \"account_holder_name\": \"string\",\n    \"bank_name\": \"string\",\n    \"last4\": \"string\",\n    \"type\": \"checking\"\n  },\n  {\n    \"id\": \"string\",\n    \"customer_id\": \"string\",\n    \"account_holder_name\": \"string\",\n    \"bank_name\": \"string\",\n    \"last4\": \"string\",\n    \"type\": \"savings\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7f15b2e-66ea-4e78-acd6-2367efcb75d5",
+          "name": "Add a bank account for EFT/ACH (unreconciled).",
+          "request": {
+            "name": "Add a bank account for EFT/ACH (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "bank-accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"account_holder_name\": \"<string>\",\n  \"bank_name\": \"<string>\",\n  \"last4\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8260d232-2254-4e42-bc03-deaae4f4d8f7",
+              "name": "Bank account added.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bank-accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"account_holder_name\": \"<string>\",\n  \"bank_name\": \"<string>\",\n  \"last4\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"account_holder_name\": \"<string>\",\n  \"bank_name\": \"<string>\",\n  \"last4\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.notch.financial",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "91319a2c-20a8-49b5-8021-d0bc2b5ba860",
+    "name": "Notch API (unreconciled capability model) Bank Accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Capability model of the Notch (notch.financial) accounts-receivable / accounts-payable automation platform for the food and beverage and wholesale distribution industry.\nIMPORTANT: Notch states an API is available for integration, but as of 2026-06-21 it does NOT publish a public developer reference, OpenAPI document, base URL, or authentication guide. This specification is an UNRECONCILED model derived from documented product capabilities (invoices/bills, payment collection and processing, customer payment portals, stored card and EFT/ACH payment methods, bank accounts, and accounting/ERP data sync). Paths, schemas, server URL, and the Bearer authentication scheme below are illustrative placeholders and are NOT confirmed against an official Notch specification. Do not treat them as production contracts. Reconcile against Notch's developer documentation when it becomes publicly available.\nDisambiguation: not Notch Pay (notchpay.co), not notch.cx, and not the Notch restaurant ordering platform.\n\nContact Support:\n Name: Notch",
+      "type": "text/plain"
+    }
+  }
+}

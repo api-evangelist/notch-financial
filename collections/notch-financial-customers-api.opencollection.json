@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Notch API (unreconciled capability model) Bank Accounts Customers API",
+    "version": "0.0.0-unreconciled"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Customers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List customers (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.notch.financial/customers"
+          },
+          "docs": "List customers (unreconciled)."
+        },
+        {
+          "info": {
+            "name": "Create a customer (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/customers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a customer (unreconciled)."
+        },
+        {
+          "info": {
+            "name": "Retrieve a customer (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.notch.financial/customers/:customerId",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a customer (unreconciled)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

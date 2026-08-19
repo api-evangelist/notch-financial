@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Notch API (unreconciled capability model) Bank Accounts Webhooks API",
+    "version": "0.0.0-unreconciled"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List webhook subscriptions (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.notch.financial/webhooks"
+          },
+          "docs": "List webhook subscriptions (unreconciled)."
+        },
+        {
+          "info": {
+            "name": "Create a webhook subscription (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/webhooks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a webhook subscription (unreconciled)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

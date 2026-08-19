@@ -1,0 +1,305 @@
+{
+  "item": [
+    {
+      "id": "22a786d4-b636-407f-a9e2-d64a1d9c3e0f",
+      "name": "Payments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "56d92fe3-3d59-4975-970b-096c4a080bbc",
+          "name": "List payments (unreconciled).",
+          "request": {
+            "name": "List payments (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c89eb0c6-b3f7-4435-a788-13b7f3e7de73",
+              "name": "A list of payments.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"customer_id\": \"string\",\n    \"invoice_id\": \"string\",\n    \"amount\": 4213.117790291943,\n    \"currency\": \"USD\",\n    \"method\": \"eft\",\n    \"status\": \"failed\",\n    \"autopay\": false,\n    \"created_at\": \"1964-11-23T17:23:28.278Z\"\n  },\n  {\n    \"id\": \"string\",\n    \"customer_id\": \"string\",\n    \"invoice_id\": \"string\",\n    \"amount\": 4580.135500013327,\n    \"currency\": \"USD\",\n    \"method\": \"eft\",\n    \"status\": \"processing\",\n    \"autopay\": true,\n    \"created_at\": \"1976-11-04T07:27:07.908Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15ff871b-c56e-47e1-b41b-d33a75777093",
+          "name": "Collect or record a payment (unreconciled).",
+          "request": {
+            "name": "Collect or record a payment (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"invoice_id\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"currency\": \"<string>\",\n  \"method\": \"<string>\",\n  \"status\": \"<string>\",\n  \"autopay\": \"<boolean>\",\n  \"created_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c20f23ff-6114-4a8e-a522-eec99f75c078",
+              "name": "Payment created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"invoice_id\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"currency\": \"USD\",\n  \"method\": \"<string>\",\n  \"status\": \"<string>\",\n  \"autopay\": \"<boolean>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"invoice_id\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"currency\": \"USD\",\n  \"method\": \"<string>\",\n  \"status\": \"<string>\",\n  \"autopay\": \"<boolean>\",\n  \"created_at\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2805ad8-ee09-4c2f-985b-87a67f079f88",
+          "name": "Retrieve a payment (unreconciled).",
+          "request": {
+            "name": "Retrieve a payment (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "payments",
+                ":paymentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "paymentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d562a2c8-6257-44c9-8852-d7d9c3510869",
+              "name": "A payment.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payments",
+                    ":paymentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"invoice_id\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"currency\": \"USD\",\n  \"method\": \"<string>\",\n  \"status\": \"<string>\",\n  \"autopay\": \"<boolean>\",\n  \"created_at\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.notch.financial",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0646047f-43f3-4bd6-8e8e-59e9bc3ea0b8",
+    "name": "Notch API (unreconciled capability model) Bank Accounts Payments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Capability model of the Notch (notch.financial) accounts-receivable / accounts-payable automation platform for the food and beverage and wholesale distribution industry.\nIMPORTANT: Notch states an API is available for integration, but as of 2026-06-21 it does NOT publish a public developer reference, OpenAPI document, base URL, or authentication guide. This specification is an UNRECONCILED model derived from documented product capabilities (invoices/bills, payment collection and processing, customer payment portals, stored card and EFT/ACH payment methods, bank accounts, and accounting/ERP data sync). Paths, schemas, server URL, and the Bearer authentication scheme below are illustrative placeholders and are NOT confirmed against an official Notch specification. Do not treat them as production contracts. Reconcile against Notch's developer documentation when it becomes publicly available.\nDisambiguation: not Notch Pay (notchpay.co), not notch.cx, and not the Notch restaurant ordering platform.\n\nContact Support:\n Name: Notch",
+      "type": "text/plain"
+    }
+  }
+}

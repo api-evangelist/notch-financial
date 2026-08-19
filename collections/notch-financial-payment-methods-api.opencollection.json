@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Notch API (unreconciled capability model) Bank Accounts Payment Methods API",
+    "version": "0.0.0-unreconciled"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payment Methods",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List stored payment methods (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.notch.financial/payment-methods"
+          },
+          "docs": "List stored payment methods (unreconciled)."
+        },
+        {
+          "info": {
+            "name": "Store a payment method (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/payment-methods",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Store a payment method (unreconciled)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

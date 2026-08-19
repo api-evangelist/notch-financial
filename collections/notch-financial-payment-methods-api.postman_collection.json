@@ -1,0 +1,212 @@
+{
+  "item": [
+    {
+      "id": "aba90a9c-94b6-4748-a717-9d671d38c6c7",
+      "name": "Payment Methods",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9427a767-4a8d-4b58-9002-3ac5701228d0",
+          "name": "List stored payment methods (unreconciled).",
+          "request": {
+            "name": "List stored payment methods (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "payment-methods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "313147b8-552b-449e-8be1-9d23cc3304d0",
+              "name": "A list of payment methods.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payment-methods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"customer_id\": \"string\",\n    \"type\": \"bank_account\",\n    \"brand\": \"amex\",\n    \"last4\": \"string\",\n    \"is_default\": true\n  },\n  {\n    \"id\": \"string\",\n    \"customer_id\": \"string\",\n    \"type\": \"bank_account\",\n    \"brand\": \"mastercard\",\n    \"last4\": \"string\",\n    \"is_default\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "021530d9-3a6c-42d1-ae43-ce7e852bfcaf",
+          "name": "Store a payment method (unreconciled).",
+          "request": {
+            "name": "Store a payment method (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "payment-methods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"brand\": \"<string>\",\n  \"last4\": \"<string>\",\n  \"is_default\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d7fe9ee9-c290-4234-9686-ab4902daf45a",
+              "name": "Payment method stored.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payment-methods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"brand\": \"<string>\",\n  \"last4\": \"<string>\",\n  \"is_default\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"brand\": \"<string>\",\n  \"last4\": \"<string>\",\n  \"is_default\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.notch.financial",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3580205a-a62e-4abe-afe0-c857d4f272f7",
+    "name": "Notch API (unreconciled capability model) Bank Accounts Payment Methods API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Capability model of the Notch (notch.financial) accounts-receivable / accounts-payable automation platform for the food and beverage and wholesale distribution industry.\nIMPORTANT: Notch states an API is available for integration, but as of 2026-06-21 it does NOT publish a public developer reference, OpenAPI document, base URL, or authentication guide. This specification is an UNRECONCILED model derived from documented product capabilities (invoices/bills, payment collection and processing, customer payment portals, stored card and EFT/ACH payment methods, bank accounts, and accounting/ERP data sync). Paths, schemas, server URL, and the Bearer authentication scheme below are illustrative placeholders and are NOT confirmed against an official Notch specification. Do not treat them as production contracts. Reconcile against Notch's developer documentation when it becomes publicly available.\nDisambiguation: not Notch Pay (notchpay.co), not notch.cx, and not the Notch restaurant ordering platform.\n\nContact Support:\n Name: Notch",
+      "type": "text/plain"
+    }
+  }
+}

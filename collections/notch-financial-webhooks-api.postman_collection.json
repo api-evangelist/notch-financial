@@ -1,0 +1,212 @@
+{
+  "item": [
+    {
+      "id": "8590bbd2-75b2-43d6-bda3-c7062bfb0bb8",
+      "name": "Webhooks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d91e774-08e4-4e7c-9177-406f95b3ff7a",
+          "name": "List webhook subscriptions (unreconciled).",
+          "request": {
+            "name": "List webhook subscriptions (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "webhooks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "220566ed-3512-4ded-a33e-b9fb4ab442b3",
+              "name": "A list of webhook subscriptions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "webhooks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"url\": \"http://PsLdApLSxRlezYoGxiTTc.lszaKfrXYPMCX4LvdIrTGf4PbTcy+GDJYusAlPWrewO+P\",\n    \"events\": [\n      \"payment.succeeded\",\n      \"payment.succeeded\"\n    ],\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"url\": \"https://fVhfPlXAkpURlDFPETSaQEIUSWIWI.bjffn139e1xHyLk1uu+iU4LxzGZXnKIbXrkjIZgVRdZxAfyjdiLXTCkVlEOi+At2XuY\",\n    \"events\": [\n      \"payment.succeeded\",\n      \"payment.succeeded\"\n    ],\n    \"active\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7347151e-027d-4d1b-8c80-f8450e5d44f9",
+          "name": "Create a webhook subscription (unreconciled).",
+          "request": {
+            "name": "Create a webhook subscription (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "webhooks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"events\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"active\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "73f472c4-0810-47bd-9b97-2cd92390e3ca",
+              "name": "Webhook subscription created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "webhooks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"events\": [\n    \"payment.succeeded\",\n    \"payment.succeeded\"\n  ],\n  \"active\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"url\": \"<uri>\",\n  \"events\": [\n    \"payment.succeeded\",\n    \"payment.succeeded\"\n  ],\n  \"active\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.notch.financial",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f3ebc714-ae3f-482d-84ec-e09b351df676",
+    "name": "Notch API (unreconciled capability model) Bank Accounts Webhooks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Capability model of the Notch (notch.financial) accounts-receivable / accounts-payable automation platform for the food and beverage and wholesale distribution industry.\nIMPORTANT: Notch states an API is available for integration, but as of 2026-06-21 it does NOT publish a public developer reference, OpenAPI document, base URL, or authentication guide. This specification is an UNRECONCILED model derived from documented product capabilities (invoices/bills, payment collection and processing, customer payment portals, stored card and EFT/ACH payment methods, bank accounts, and accounting/ERP data sync). Paths, schemas, server URL, and the Bearer authentication scheme below are illustrative placeholders and are NOT confirmed against an official Notch specification. Do not treat them as production contracts. Reconcile against Notch's developer documentation when it becomes publicly available.\nDisambiguation: not Notch Pay (notchpay.co), not notch.cx, and not the Notch restaurant ordering platform.\n\nContact Support:\n Name: Notch",
+      "type": "text/plain"
+    }
+  }
+}

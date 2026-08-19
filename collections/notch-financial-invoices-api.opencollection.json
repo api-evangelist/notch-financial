@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Notch API (unreconciled capability model) Bank Accounts Invoices API",
+    "version": "0.0.0-unreconciled"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Invoices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List invoices (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.notch.financial/invoices"
+          },
+          "docs": "Illustrative; not a documented Notch endpoint."
+        },
+        {
+          "info": {
+            "name": "Create an invoice (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/invoices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an invoice (unreconciled)."
+        },
+        {
+          "info": {
+            "name": "Retrieve an invoice (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.notch.financial/invoices/:invoiceId",
+            "params": [
+              {
+                "name": "invoiceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an invoice (unreconciled)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

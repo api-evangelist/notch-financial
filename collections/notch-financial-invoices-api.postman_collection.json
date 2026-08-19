@@ -1,0 +1,308 @@
+{
+  "item": [
+    {
+      "id": "76ac5d55-571f-4e77-9131-c5654a9c2c4c",
+      "name": "Invoices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e34fd3a2-93b6-4add-a896-b4d64d18bc08",
+          "name": "List invoices (unreconciled).",
+          "request": {
+            "name": "List invoices (unreconciled).",
+            "description": {
+              "content": "Illustrative; not a documented Notch endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "24e6eb6b-eef1-48d9-947a-875755f2ec82",
+              "name": "A list of invoices.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"customer_id\": \"string\",\n    \"number\": \"string\",\n    \"status\": \"open\",\n    \"currency\": \"USD\",\n    \"amount_due\": 4615.784787025169,\n    \"amount_paid\": 7693.238661597657,\n    \"due_date\": \"2024-01-13\",\n    \"created_at\": \"1998-12-17T02:32:19.784Z\"\n  },\n  {\n    \"id\": \"string\",\n    \"customer_id\": \"string\",\n    \"number\": \"string\",\n    \"status\": \"draft\",\n    \"currency\": \"USD\",\n    \"amount_due\": 6024.48050926463,\n    \"amount_paid\": 1249.0083923606244,\n    \"due_date\": \"2007-09-27\",\n    \"created_at\": \"1958-12-24T02:14:46.018Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b50b7b83-75e5-4a9e-a2c9-84f36ee42fc1",
+          "name": "Create an invoice (unreconciled).",
+          "request": {
+            "name": "Create an invoice (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"number\": \"<string>\",\n  \"status\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"amount_due\": \"<number>\",\n  \"amount_paid\": \"<number>\",\n  \"due_date\": \"<date>\",\n  \"created_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ae5c1ca-4c32-41eb-873f-2a7b108f4e97",
+              "name": "Invoice created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"number\": \"<string>\",\n  \"status\": \"<string>\",\n  \"currency\": \"USD\",\n  \"amount_due\": \"<number>\",\n  \"amount_paid\": \"<number>\",\n  \"due_date\": \"<date>\",\n  \"created_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"number\": \"<string>\",\n  \"status\": \"<string>\",\n  \"currency\": \"USD\",\n  \"amount_due\": \"<number>\",\n  \"amount_paid\": \"<number>\",\n  \"due_date\": \"<date>\",\n  \"created_at\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "76535049-bf64-4cae-87ac-07807185aded",
+          "name": "Retrieve an invoice (unreconciled).",
+          "request": {
+            "name": "Retrieve an invoice (unreconciled).",
+            "description": {},
+            "url": {
+              "path": [
+                "invoices",
+                ":invoiceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "invoiceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dca31ca3-55a2-4d14-a159-b09df5f33b55",
+              "name": "An invoice.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices",
+                    ":invoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invoiceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"number\": \"<string>\",\n  \"status\": \"<string>\",\n  \"currency\": \"USD\",\n  \"amount_due\": \"<number>\",\n  \"amount_paid\": \"<number>\",\n  \"due_date\": \"<date>\",\n  \"created_at\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.notch.financial",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e6c52f71-66dd-4715-a7d4-0fd0242db82a",
+    "name": "Notch API (unreconciled capability model) Bank Accounts Invoices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Capability model of the Notch (notch.financial) accounts-receivable / accounts-payable automation platform for the food and beverage and wholesale distribution industry.\nIMPORTANT: Notch states an API is available for integration, but as of 2026-06-21 it does NOT publish a public developer reference, OpenAPI document, base URL, or authentication guide. This specification is an UNRECONCILED model derived from documented product capabilities (invoices/bills, payment collection and processing, customer payment portals, stored card and EFT/ACH payment methods, bank accounts, and accounting/ERP data sync). Paths, schemas, server URL, and the Bearer authentication scheme below are illustrative placeholders and are NOT confirmed against an official Notch specification. Do not treat them as production contracts. Reconcile against Notch's developer documentation when it becomes publicly available.\nDisambiguation: not Notch Pay (notchpay.co), not notch.cx, and not the Notch restaurant ordering platform.\n\nContact Support:\n Name: Notch",
+      "type": "text/plain"
+    }
+  }
+}

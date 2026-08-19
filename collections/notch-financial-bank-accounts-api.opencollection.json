@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Notch API (unreconciled capability model) Bank Accounts API",
+    "version": "0.0.0-unreconciled"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bank Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List bank accounts (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.notch.financial/bank-accounts"
+          },
+          "docs": "List bank accounts (unreconciled)."
+        },
+        {
+          "info": {
+            "name": "Add a bank account for EFT/ACH (unreconciled).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.notch.financial/bank-accounts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a bank account for EFT/ACH (unreconciled)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
