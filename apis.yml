@@ -32,7 +32,7 @@ tags:
 - FinTech
 created: '2026-06-21'
 modified: '2026-06-21'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: notch-financial:notch-financial-bank-accounts-api
   name: Notch Bank Accounts API
