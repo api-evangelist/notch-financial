@@ -29,6 +29,12 @@ tags:
 - Accounts Payable
 - B2B Payments
 - Invoicing
+- Fintech
+tags_raw:
+- Accounts Receivable
+- Accounts Payable
+- B2B Payments
+- Invoicing
 - FinTech
 created: '2026-06-21'
 modified: '2026-06-21'
@@ -134,6 +140,8 @@ apis:
   description: The Webhooks API from Notch — 1 operation(s) for webhooks.
   humanURL: https://www.notch.financial/products/bills-invoice-management
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
