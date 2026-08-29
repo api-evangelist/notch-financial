@@ -10,6 +10,18 @@ description: Notch is an accounts-receivable and accounts-payable automation pla
   having an API available for integration, but does not publish a public developer
   reference; the API surfaces modeled here are derived from documented product
   capabilities and are not reconciled against an official specification.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: enterprise
   onboarding: self-serve
