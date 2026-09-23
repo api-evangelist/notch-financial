@@ -1,11 +1,7 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Notch API (unreconciled capability model) Bank Accounts Webhooks API
-  description: 'Capability model of the Notch (notch.financial) accounts-receivable / accounts-payable automation platform for the food and beverage and wholesale distribution industry.
-
-    IMPORTANT: Notch states an API is available for integration, but as of 2026-06-21 it does NOT publish a public developer reference, OpenAPI document, base URL, or authentication guide. This specification is an UNRECONCILED model derived from documented product capabilities (invoices/bills, payment collection and processing, customer payment portals, stored card and EFT/ACH payment methods, bank accounts, and accounting/ERP data sync). Paths, schemas, server URL, and the Bearer authentication scheme below are illustrative placeholders and are NOT confirmed against an official Notch specification. Do not treat them as production contracts. Reconcile against Notch''s developer documentation when it becomes publicly available.
-
-    Disambiguation: not Notch Pay (notchpay.co), not notch.cx, and not the Notch restaurant ordering platform.'
+  title: Notch API (unreconciled capability model) Webhooks API
+  description: Capability model of the Notch (notch.financial) accounts-receivable / accounts-payable automation platform for the food and beverage and wholesale distribution industry.
   contact:
     name: Notch
     url: https://www.notch.financial
@@ -23,7 +19,7 @@ paths:
       operationId: listWebhooks
       tags:
       - Webhooks
-      summary: List webhook subscriptions (unreconciled).
+      summary: List webhook subscriptions (unreconciled)
       responses:
         '200':
           description: A list of webhook subscriptions.
@@ -37,7 +33,7 @@ paths:
       operationId: createWebhook
       tags:
       - Webhooks
-      summary: Create a webhook subscription (unreconciled).
+      summary: Create a webhook subscription (unreconciled)
       requestBody:
         required: true
         content:
