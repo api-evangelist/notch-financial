@@ -64,6 +64,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/Invoice'
 components:
+  parameters:
+    invoiceId:
+      name: invoiceId
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     Invoice:
       type: object
@@ -96,13 +103,6 @@ components:
         created_at:
           type: string
           format: date-time
-  parameters:
-    invoiceId:
-      name: invoiceId
-      in: path
-      required: true
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http

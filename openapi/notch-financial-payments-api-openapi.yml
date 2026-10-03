@@ -63,6 +63,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/Payment'
 components:
+  parameters:
+    paymentId:
+      name: paymentId
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     Payment:
       type: object
@@ -98,13 +105,6 @@ components:
         created_at:
           type: string
           format: date-time
-  parameters:
-    paymentId:
-      name: paymentId
-      in: path
-      required: true
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http
