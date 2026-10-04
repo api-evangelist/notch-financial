@@ -170,6 +170,9 @@ apis:
   - type: Documentation
     url: https://www.notch.financial/integrations
 common:
+- type: CapabilityMap
+  url: capabilities/notch-financial-capability-edges.yml
+  name: Notch Business Capability Map
 - type: AgenticAccess
   url: agentic-access/notch-financial-agentic-access.yml
 - type: DomainSecurity
