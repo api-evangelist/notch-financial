@@ -63,6 +63,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/Customer'
 components:
+  parameters:
+    customerId:
+      name: customerId
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     Customer:
       type: object
@@ -80,13 +87,6 @@ components:
         created_at:
           type: string
           format: date-time
-  parameters:
-    customerId:
-      name: customerId
-      in: path
-      required: true
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http
