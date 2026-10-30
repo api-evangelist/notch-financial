@@ -1,4 +1,4 @@
-# Notch (notch-financial)
+# Notch
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,149 +66,125 @@
 
 Notch is an accounts-receivable and accounts-payable automation platform purpose-built for the food and beverage and wholesale distribution industry. It automates invoicing, payment collection, payment processing, and reconciliation, with branded customer payment portals, autopay, and dual-sync accounting / ERP integrations (QuickBooks, NetSuite, Xero, Microsoft Dynamics 365). Notch describes having an API available for integration, but does not publish a public developer reference; the API surfaces modeled here are derived from documented product capabilities and are not reconciled against an official specification.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/notch-financial/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/notch-financial/refs/heads/main/apis.yml)
+**Areas:** Accounts Receivable · Accounts Payable · B2B Payments · Invoicing · Fintech
 
-> Disambiguation: This profile is for **Notch** at [notch.financial](https://www.notch.financial) (AR/AP automation for food & beverage / wholesale distribution). It is **not** Notch Pay ([notchpay.co](https://notchpay.co), an African payment gateway), **not** Notch at [notch.cx](https://www.notch.cx) (AI agents), and **not** the Notch restaurant ordering platform.
+## Notch on APIs.io
 
-## Tags
+Everything profiled for Notch is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/notch-financial/](https://apis.io/providers/notch-financial/)** — or go straight to one of the APIs or properties below.
 
-- Accounts Receivable
-- Accounts Payable
-- B2B Payments
-- Invoicing
-- FinTech
+### APIs (6)
 
-## Timestamps
+- [Notch Bank Accounts API](https://apis.io/apis/notch-financial/notch-financial-bank-accounts-api/) — The Bank Accounts API from Notch — 1 operation(s) for bank accounts.
+- [Notch Customers API](https://apis.io/apis/notch-financial/notch-financial-customers-api/) — The Customers API from Notch — 2 operation(s) for customers.
+- [Notch Invoices API](https://apis.io/apis/notch-financial/notch-financial-invoices-api/) — The Invoices API from Notch — 2 operation(s) for invoices.
+- [Notch Payment Methods API](https://apis.io/apis/notch-financial/notch-financial-payment-methods-api/) — The Payment Methods API from Notch — 1 operation(s) for payment methods.
+- [Notch Payments API](https://apis.io/apis/notch-financial/notch-financial-payments-api/) — The Payments API from Notch — 2 operation(s) for payments.
+- [Notch Webhooks API](https://apis.io/apis/notch-financial/notch-financial-webhooks-api/) — The Webhooks API from Notch — 1 operation(s) for webhooks.
 
-- **Created:** 2026-06-21
-- **Modified:** 2026-06-21
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Notch Invoices API
+#### Agentic access (1)
 
-Capability area covering creation, retrieval, and management of invoices and outstanding bills that customers can view and pay. Notch syncs invoice and collections data to connected accounting / ERP systems. No public endpoint reference is documented by Notch; modeled here as an unreconciled capability.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://www.notch.financial/products/bills-invoice-management](https://www.notch.financial/products/bills-invoice-management)
+- [Notch Financial Agentic Access](https://apis.io/agentic-access/notch-financial/notch-financial-agentic-access/)
 
-#### Tags
+#### Collections (7)
 
-- Invoices
-- Bills
-- Accounts Receivable
+Postman and Open Collection request collections.
 
-#### Properties
+- [Notch API (unreconciled capability model)](https://apis.io/collections/notch-financial/open-notch-financial/)
+- [Notch API (unreconciled capability model) Bank Accounts API](https://apis.io/collections/notch-financial/open-notch-financial-bank-accounts-api/)
+- [Notch API (unreconciled capability model) Bank Accounts Customers API](https://apis.io/collections/notch-financial/open-notch-financial-customers-api/)
+- [Notch API (unreconciled capability model) Bank Accounts Invoices API](https://apis.io/collections/notch-financial/open-notch-financial-invoices-api/)
+- [Notch API (unreconciled capability model) Bank Accounts Payment Methods API](https://apis.io/collections/notch-financial/open-notch-financial-payment-methods-api/)
+- [Notch API (unreconciled capability model) Bank Accounts Payments API](https://apis.io/collections/notch-financial/open-notch-financial-payments-api/)
+- [Notch API (unreconciled capability model) Bank Accounts Webhooks API](https://apis.io/collections/notch-financial/open-notch-financial-webhooks-api/)
 
-- [Documentation](https://www.notch.financial/products/bills-invoice-management)
-- [OpenAPI](openapi/notch-financial-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/notch-financial.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/notch-financial.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Security (2)
 
-### Notch Payments API
+Authentication, trust centre, and vulnerability disclosure.
 
-Capability area covering payment collection, processing, autopay / scheduled pull payments, and reconciliation against invoices. Supports card and EFT/ACH payment rails per the product. No public endpoint reference is documented by Notch; modeled here as an unreconciled capability.
+- [Notch Financial Authentication](https://apis.io/security/notch-financial/notch-financial-authentication/)
+- [Notch Financial Domain Security](https://apis.io/security/notch-financial/notch-financial-domain-security/)
 
-- **Human URL:** [https://www.notch.financial/products/payment-processing-software](https://www.notch.financial/products/payment-processing-software)
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
-- Payments
-- Collection
-- Reconciliation
+- [Notch Financial Plans Pricing](https://apis.io/plans/notch-financial/notch-financial-plans-pricing/)
 
-#### Properties
+#### Rate limits (1)
 
-- [Documentation](https://www.notch.financial/products/payment-processing-software)
-- [OpenAPI](openapi/notch-financial-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/notch-financial.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/notch-financial.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published request limits.
 
-### Notch Customers API
+- [Notch Financial Rate Limits](https://apis.io/rate-limits/notch-financial/notch-financial-rate-limits/)
 
-Capability area covering customer records that own invoices, payment methods, and portal access for branded self-serve payment. No public endpoint reference is documented by Notch; modeled here as an unreconciled capability.
+#### FinOps (1)
 
-- **Human URL:** [https://www.notch.financial/products/customer-payment-portal](https://www.notch.financial/products/customer-payment-portal)
+What the API costs to run, by operation.
 
-#### Tags
+- [Notch Financial Finops](https://apis.io/finops/notch-financial/notch-financial-finops/)
 
-- Customers
-- CRM
-- Accounts
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Documentation](https://www.notch.financial/products/customer-payment-portal)
-- [OpenAPI](openapi/notch-financial-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/notch-financial.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/notch-financial.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Notch Payment Methods API
-
-Capability area covering stored customer payment methods - credit cards (Visa, Mastercard, Amex) and EFT/ACH - held in PCI-compliant infrastructure and used for autopay. No public endpoint reference is documented by Notch; modeled here as an unreconciled capability.
-
-- **Human URL:** [https://www.notch.financial/products/customer-payment-portal](https://www.notch.financial/products/customer-payment-portal)
-
-#### Tags
-
-- Payment Methods
-- Cards
-- Autopay
-
-#### Properties
-
-- [Documentation](https://www.notch.financial/products/customer-payment-portal)
-- [OpenAPI](openapi/notch-financial-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/notch-financial.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/notch-financial.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Notch Bank Accounts API
-
-Capability area covering bank accounts used for EFT/ACH electronic fund transfers in payment collection and disbursement. No public endpoint reference is documented by Notch; modeled here as an unreconciled capability.
-
-- **Human URL:** [https://www.notch.financial/products/payment-collection-software](https://www.notch.financial/products/payment-collection-software)
-
-#### Tags
-
-- Bank Accounts
-- EFT
-- ACH
-
-#### Properties
-
-- [Documentation](https://www.notch.financial/products/payment-collection-software)
-- [OpenAPI](openapi/notch-financial-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/notch-financial.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/notch-financial.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Notch Webhooks API
-
-Capability area covering event notifications and one-way / two-way data sync that keep connected accounting and ERP systems updated with paid bills, outstanding invoices, and collections data in real time. No public webhook reference is documented by Notch; modeled here as an unreconciled capability.
-
-- **Human URL:** [https://www.notch.financial/integrations](https://www.notch.financial/integrations)
-
-#### Tags
-
-- Webhooks
-- Events
-- Sync
-
-#### Properties
-
-- [Documentation](https://www.notch.financial/integrations)
-- [OpenAPI](openapi/notch-financial-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/notch-financial.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/notch-financial.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://ca.linkedin.com/company/notchfinancial)
 - [Website](https://www.notch.financial)
 - [Documentation](https://www.notch.financial/integrations)
-- [Plans](plans/notch-financial-plans-pricing.yml)
-- [Rate Limits](rate-limits/notch-financial-rate-limits.yml)
-- [Fin Ops](finops/notch-financial-finops.yml)
+- [Blog](https://www.notch.financial/blog)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 20.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 41.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 5.3 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.7** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/notch-financial/](https://apis.io/providers/notch-financial/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Notch: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/notch-financial/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
